@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{css/matiere/matieres.css}">
+</head>
+<body>
+<div class="form">
+<form name="Form1" action="mypage.asp" method="get">
+<table>
+		<tr th:each="nom:${liste}">
+			<td th:text="${nom.ID}"></td>
+			<td th:text="${nom.NUMERO_MATIERE}"></td>
+			<td th:text="${nom.Nom}"></td>	
+			<td th:text="${nom.COEF}"></td>
+			<td th:text="${nom.DATE_DEBUT}"></td>
+			<td th:text="${nom.DATE_FIN}"></td>
+			<td th:text="${nom.enseignant.nom}"></td>
+			<td th:text="${nom.enseignant.prenom}"></td>
+			<td><a th:href="@{matiere_details(id=${nom.ID})}">Voir Details</td>
+			<td><a th:href="@{supprimer_matiere(id=${nom.ID})}">Supprimer Matiere</td>
+			<td><a th:href="@{modifier-matiere-form(id=${nom.ID})}">Modifier Matiere</td>
+    	</tr>
+    </table>
+    
+    <br/>
+     <br/>
+      <br/>
+    <a th:href="@{/ajout-matiere}">AJOUTER MATIERE</a>
+    </form>
+</div>
+</body>
+</html>

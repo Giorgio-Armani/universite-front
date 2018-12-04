@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{css/etudiant/etudiants.css}">
+</head>
+<body>
+<table>
+		<tr th:each="nom:${liste}">
+			<td th:text="${nom.id}"></td>
+			<td th:text="${nom.numero}"></td>
+			<td th:text="${nom.nom}"></td>
+			<td th:text="${nom.prenom}"></td>
+			<td th:text="${nom.dateNaissance}"></td>
+			<td th:text="${nom.sexe}"></td>
+			<td><a th:href="@{etudiant_details(id=${nom.id})}">Voir Details</td>
+			<td><a th:href="@{supprimer_etudiant(id=${nom.id})}">Supprimer Etudiant</td>
+			<td><a th:href="@{modifier-etudiants(id=${nom.id})}">Modifier Etudiant</td>
+    	</tr>
+    </table>
+<a th:href="@{/ajout-etudiants}">Ajouter Etudiant</a>
+</body>
+</html>

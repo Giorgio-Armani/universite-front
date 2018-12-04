@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{css/matiere/ajoutmatiere.css}">
+<meta charset="ISO-8859-1">
+<title>Ajout Matiere</title>
+</head>
+<body>
+<form th:action="@{ajouter-matiere}" method="POST" th:object="${matiere}">
+        
+         <input type="hidden" th:field="*{ID}"  placeholder="ID" id="ID"/>
+         <br/>
+         <label for="NUMERO_MATIERE">NUMERO_MATIERE:</label>
+         <input type="text" th:field="*{NUMERO_MATIERE}" placeholder="NUMERO_MATIERE" id="NUMERO_MATIERE"/>
+         <br/>
+         <label for="nom">Nom:</label>
+         <input type="text" th:field="*{nom}" placeholder="Nom" id="Nom"/>
+         <br/>
+         <label for="COEF">COEF:</label>
+         <input type="text" th:field="*{COEF}" placeholder="COEF" id="COEF"/>
+         <br/>
+         <label for="DATE_DEBUT">DATE_DEBUT:</label>
+         <input type="text" th:field="*{DATE_DEBUT}" placeholder="DATE_DEBUT" id="DATE_DEBUT"/>
+         <br/>
+         <label for="DATE_FIN">DATE_FIN:</label>
+         <input type="text" th:field="*{DATE_FIN}" placeholder="DATE_FIN" id="DATE_FIN"/>
+         <br/> 
+         <select name = "idEnseignant">
+         <option th:each = "e :${enseignant}" th:value ="${e.id}" th:text ="${e.nom + ' '+ e.prenom}">
+         </select> 
+         <input type="submit" value="valider"/>
+         
+      </form>
+      <a th:href="@{/matiere}">Retour</a>
+
+
+</body>
+</html>

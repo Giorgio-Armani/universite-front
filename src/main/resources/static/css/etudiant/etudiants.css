@@ -1,0 +1,8 @@
+tr, td , table {
+	border:  2px green solid;
+	border-collapse: collapse;
+}
+label {
+    margin-top:10px;
+    display:block;
+}

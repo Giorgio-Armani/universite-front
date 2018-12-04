@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{modifier-etudiants}" method="POST" th:object="${etudiants}">
+        
+         <input type="hidden" th:field="*{id}"  placeholder="id" id="id"/>
+         <br/>
+         <label for="numero_etudiant">numero_etudiant:</label>
+         <input type="text" th:field="*{numero}" placeholder="numero_etudiant" id="numero_etudiant"/>
+         <br/>
+         <label for="nom">Nom:</label>
+         <input type="text" th:field="*{nom}" placeholder="nom" id="nom"/>
+         <br/>
+         <label for="prenom">Prenom:</label>
+         <input type="text" th:field="*{prenom}" placeholder="prenom" id="prenom"/>
+         <br/>
+         <label for="date_naissance">date_naissance:</label>
+         <input type="text" th:field="*{dateNaissance}" placeholder="date_naissance" id="date_naissance"/>
+         <br/>
+         <label for="sexe">Sexe:</label>
+         <input type="text" th:field="*{sexe}" placeholder="sexe" id="sexe"/>
+         <br/>
+         
+         <input type="submit" value="valider"/>
+         
+      </form>
+      <a th:href="@{/etudiants}">Retour</a>
+
+</body>
+</html>

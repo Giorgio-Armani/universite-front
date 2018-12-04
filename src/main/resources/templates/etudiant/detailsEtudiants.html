@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{css/etudiant/detailsEtudiants.css}">
+</head>
+<body>
+	<h1>Details Etudiants</h1>
+
+	Id:
+	<span th:text="${etudiants.id}"> </span>
+	<br /> NumeroEtudiants:
+	<span th:text="${etudiants.numero}"> </span>
+	<br /> Nom:
+	<span th:text="${etudiants.nom}"> </span>
+	<br /> Prenom:
+	<span th:text="${etudiants.prenom}"> </span>
+	<br /> DateNaissance:
+	<span th:text="${etudiants.dateNaissance}"> </span>
+	<br /> Sexe:
+	<span th:text="${etudiants.sexe}"> </span>
+	<br />
+
+	<table>
+		<tr th:each="n : ${etudiants.note}">
+			<td th:text="${n.matiere.Nom}"></td>
+			<td th:text="${n.note}"></td>
+			<td th:text="${n.matiere.enseignant.nom + ' '  + n.matiere.enseignant.prenom}"></td>
+
+		</tr>
+	</table>
+
+
+	<a th:href="@{/etudiants}">Retour</a>
+
+</body>
+</html>

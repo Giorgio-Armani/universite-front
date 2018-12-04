@@ -1,0 +1,21 @@
+tr, td , table {
+    center;
+	border:  5px green solid;
+	border-collapse: collapse;
+}
+label {
+    margin-top:20px;
+    display:block;
+}
+div.form
+{
+    display: block;
+    text-align: center;
+}
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}

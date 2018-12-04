@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+   <head>
+      <meta charset="ISO-8859-1" />
+      <title>Insert title here</title>
+   </head>
+   <body>
+      <form th:action="@{ajouter-enseignant}" method="POST" th:object="${enseignant}">
+        
+         <input type="hidden" th:field="*{id}"  placeholder="id" id="id" />
+         <br />
+         <label for="numero">numero:</label>
+         <input type="text" th:field="*{numero}" placeholder="numero" id="numero" />
+         <br />
+         <label for="nom">Nom:</label>
+         <input type="text" th:field="*{nom}" placeholder="nom" id="nom" />
+         <br />
+         <label for="prenom">Prenom:</label>
+         <input type="text" th:field="*{prenom}" placeholder="prenom" id="prenom" />
+         <br />
+         <label for="dateNaissance">dateNaissance:</label>
+         <input type="text" th:field="*{dateNaissance}" placeholder="dateNaissance" id="dateNaissance" />
+         <br />
+         <label for="sexe">Sexe:</label>
+         <input type="text" th:field="*{sexe}" placeholder="sexe" id="sexe" />
+         <br />
+         <label for="grade">Grade:</label>
+         <input type="text" th:field="*{grade}" placeholder="grade" id="grade" />
+         <br />
+         <label for="dateEmbauche">dateEmbauche:</label>
+         <input type="text" th:field="*{dateEmbauche}" placeholder="dateEmbauche" id="dateEmbauche" />
+         <br />
+         <input type="submit" value="valider" />
+         
+      </form>
+   </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{css/notes/note.css}">
+</head>
+<body>
+	<div class="form">
+		<form name="Form1" action="mypage.asp" method="get">
+			<table>
+				<tr>
+					<th class="gh">Note</th>
+					<th class="gh">Nom Etudiant</th>
+					<th class="gh">Matiere</th>
+				</tr>
+				<tr th:each="nom:${note}">
+					<td th:text="${nom.note}"></td>
+					<td th:text="${nom.etudiant.nom}+' '+ ${nom.etudiant.prenom}"></td>
+					<td th:text="${nom.matiere.nom}"></td>
+
+				</tr>
+			</table>
+
+			<br /> <br /> <br />
+		</form>
+	</div>
+
+</body>
+</html>
